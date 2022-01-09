@@ -27,7 +27,7 @@ body{
     }
     .projectItem{
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 50px;
       margin-bottom: 20px;
       &:hover {
         cursor: none;
@@ -70,11 +70,12 @@ body{
     position: absolute;
     width: auto;
     height: auto;
-    max-height: 50%;
-    max-width: 60%;
+    max-height: 65%;
+    max-width: 90%;
     object-fit: contain;
     pointer-events: none;
     border-radius: 10%;
+    transition: all .3s ease;
     &.isActive{
       opacity: 1;
     }

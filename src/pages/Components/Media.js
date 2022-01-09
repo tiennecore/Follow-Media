@@ -8,9 +8,7 @@ const Media = ({activeIndex}) => {
     const [dimension,setDimension] = useState({width:0,height:0})
     useEffect(async ()=>{
         setTimeout(() => {
-            const dimH =ref.current.offsetWidth
-            const dimW =ref.current.offsetHeight
-            setDimension({width:dimW,height:dimH})
+            setDimension({width:ref.current.offsetWidth,height:ref.current.offsetHeight})
         }, 200);
     },[ref])
 
