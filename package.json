@@ -1,9 +1,10 @@
 {
-  "name": "react-quicklaunch",
+  "name": "Follow-Media",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tiennecore.github.io/nameproject",
+  "homepage": "https://tiennecore.github.io/Follow-Media",
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
