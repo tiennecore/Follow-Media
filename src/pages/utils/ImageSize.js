@@ -1,4 +1,4 @@
-import {useCallback, useLayoutEffect, useState} from 'react';
+import React, {useCallback, useLayoutEffect, useState} from 'react';
 
 const ImageSize = () => {
     const [dimension,setDimension] = useState({})
@@ -15,7 +15,7 @@ const ImageSize = () => {
     },[])
     useLayoutEffect(()=>{
         if (node){
-            const measure = ()=>setDimension(getDimensionObject(node))
+            const measure = ()=>setDimension(getDimensionObject())
             measure()
         }
     },[node])

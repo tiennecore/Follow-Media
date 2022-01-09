@@ -1,24 +1,32 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import sampleData from "../utils/Data";
 import UseMousePosition from "../utils/UseMousePosition";
-import ImageSize from "../utils/ImageSize";
 
 const Media = ({activeIndex}) => {
     const { x, y} = UseMousePosition()
-    const [ref,{width,height}] = ImageSize()
+    const ref = useRef(null)
+    const [dimension,setDimension] = useState({width:0,height:0})
+    useEffect(async ()=>{
+        setTimeout(() => {
+            const dimH =ref.current.offsetWidth
+            const dimW =ref.current.offsetHeight
+            setDimension({width:dimW,height:dimH})
+        }, 200);
+    },[ref])
+
     return (
         <div className="media">
             {sampleData.map((item,index) =>{
-                const xPos = index==activeIndex? x:0
-                const yPos = index==activeIndex? y:0
-
+                const active = index===activeIndex
+                const xPos = active? x:0
+                const yPos = active? y:0
                 return  <img
                     key={item.title}
                     ref={ref}
-                    className={index===activeIndex ? "isActive":""}
+                    className={active ? "isActive":""}
                     src={item.link}
                     alt=""
-                    style={{transform: ` translate(${xPos-(width/2)}px,${yPos-(height/2)}px)`}}
+                    style={{transform: ` translate(${xPos-(dimension.width/2)}px,${yPos-(dimension.height/2)}px)`}}
                 />
             })}
         </div>
