@@ -9,8 +9,8 @@ const Media = ({activeIndex}) => {
     return (
         <div className="media">
             {sampleData.map((item,index) =>{
-                const xPos = index===activeIndex? x:0
-                const yPos = index===activeIndex? y:0
+                const xPos = index==activeIndex? x:0
+                const yPos = index==activeIndex? y:0
 
                 return  <img
                     key={item.title}
